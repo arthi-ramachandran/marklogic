@@ -1,2 +1,2 @@
-# marklogic
-This upload speeds up the creation of docker container for MarkLogic 9 early access on windows. Windows remains as one of the heavily used operating system for hosting MarkLogic server. 
+# MarkLogic 9 early access docker container on windows
+This upload speeds up the creation of docker container for MarkLogic 9 early access on windows. Windows remains as one of the heavily used operating system for hosting MarkLogic server. Please check Marklogic install guide[https://docs.marklogic.com/guide/installation.pdf] for most current message around operating systems for hosting ML server. 
