@@ -33,9 +33,15 @@ RUN Start-Process -Wait -FilePath setup.exe -ArgumentList '-q', '-D', '-g', '-o'
 EXPOSE 7997 7998 7999 8000 8001 8002 8040 8041 8042
 ```
 
-## Creating ML9 container on windows 
+## Creating ML9 docker image on windows 
+To build the image, you will need to have the .msi file for ML9 in same directory that has the Dockerfile. Here is the link to get the ML9 [ Marklogic 9 early access ] (http://marklogicea.staging.wpengine.com/account/login/?redirect_to=http://marklogicea.staging.wpengine.com/) for windows.
 
-## Executing ML9 container on windows
+```
+cd .to.path.that.has.Dockerfile.
+docker build ml9-windows .
+ where ml9-windows is the name of the docker image that is built
+ ```
+## Starting  ML9 docker container on windows
 
 ## Licensing
 
