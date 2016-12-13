@@ -5,8 +5,7 @@ This upload speeds up the creation of docker container for MarkLogic 9 early acc
 This document assumes that user has windows environment on which docker is installed. For better experience with docker on windows,  windows server 2016 is highly recommended as the host OS on which we will create and excute containers. As of October 2016, native container support has been announced on windows server 2016 and that makes the docker experience on windows superior. Windows 10 pro for education or enterprise is another host operating system option for docker on windows. On windows 10 pro, user will have to install and configure [Docker For Windows](https://docs.docker.com/docker-for-windows/).
 
 ## Dockerfile to build the docker image
-The file for creating ML9 docker image is :
-
+The file for building ML9 docker image is below. This file is also on [Github](https://github.com/arthi-ramachandran/marklogic/blob/master/Dockerfile).
 ```
 #download the windows server 2016 image from docker
 FROM microsoft/windowsservercore
