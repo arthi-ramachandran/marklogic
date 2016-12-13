@@ -1,4 +1,4 @@
-#download the windows server 2016 image from docker hub
+#download the windows server 2016 image from docker 
 FROM microsoft/windowsservercore
 
 #set the working dir
