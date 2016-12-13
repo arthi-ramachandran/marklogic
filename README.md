@@ -7,7 +7,7 @@ This document assumes that user has windows environment on which docker is insta
 ## Dockerfile to build the docker image
 The file for creating ML9 docker image is :
 
-'''
+```
 #download the windows server 2016 image from docker
 FROM microsoft/windowsservercore
 
@@ -31,7 +31,7 @@ RUN Start-Process -Wait -FilePath setup.exe -ArgumentList '-q', '-D', '-g', '-o'
 
 
 EXPOSE 7997 7998 7999 8000 8001 8002 8040 8041 8042
-'''
+```
 
 ## Creating ML9 container on windows 
 
