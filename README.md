@@ -59,5 +59,9 @@ executes the net start command on bash
 
 ## Licensing
 
+We do not share the docker image with MarkLogic pre installed on public cloud becuase the image has same licensing terms as the MarkLogic .msi windows install file.
 
+The dockerfile uses window server 2016 base image and the following licensing terms apply for use of that docker image.
+
+Microsoft Corporation licenses Windows Server 2016 OS Image as supplement to you (“Supplement”). You are licensed to use the Supplement in conjunction with the underlying host operating system software (“Host Software”) solely to assist running the containers feature in the Host Software. The Host Software license terms apply to your use of the Supplement. 
 
