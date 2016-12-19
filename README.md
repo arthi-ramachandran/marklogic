@@ -37,11 +37,27 @@ To build the image, you will need to have the .msi file for ML9 in same director
 
 ```
 cd .to.path.that.has.Dockerfile.
-docker build ml9-windows .
+docker build ml9-windows-nightly .
  where ml9-windows is the name of the docker image that is built
  ```
 ## Starting  ML9 docker container on windows
+```
+docker run -d -p 8000-8004:8000-8004 --name win-ml9 ml9-windows-nightly POWERSHELL -c "net start MarkLogic;ping -t localhost"
+
+Options:
+--name win-ml9    Assign win-ml9 as  the name of your container
+-d                Run container in background and assign a container id
+ml9-windows-nightly is the name of the docker image that was build in the previoud step
+
+```
+Once the container is started in background, we can use the 'docker exec' command to invoke any command we need within the windows container. Example exec command for windows container:
+```
+docker exec win-ml9 c:\cygwin\bin\bash.exe  -c "net start"
+executes the net start command on bash
+```
+
 
 ## Licensing
+
 
 
