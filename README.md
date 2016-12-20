@@ -1,11 +1,11 @@
-# MarkLogic 9 early access docker container on windows
-This upload speeds up the creation of docker container for MarkLogic 9 early access on windows. Windows remains as one of the heavily used operating system for hosting MarkLogic server. Please check [Marklogic install guide](https://docs.marklogic.com/guide/installation.pdf) for most current message around operating systems for hosting Marklogic server. We will specify Marklogic 9 early access as ML9 in this document.
+# MarkLogic docker container on windows
+This upload speeds up the creation of docker container for MarkLogic on windows. Windows remains as one of the heavily used operating system for hosting MarkLogic server. Please check [Marklogic install guide](https://docs.marklogic.com/guide/installation.pdf) for most current message around operating systems for hosting Marklogic server. We will specify Marklogic as ML in this document.
 
 ## Docker environment on windows
 This document assumes that user has windows environment on which docker is installed. For better experience with docker on windows,  windows server 2016 is highly recommended as the host OS on which we will create and excute containers. As of October 2016, native container support has been announced on windows server 2016 and that makes the docker experience on windows superior. Windows 10 pro for education or enterprise is another host operating system option for docker on windows. On windows 10 pro, user will have to install and configure [Docker For Windows](https://docs.docker.com/docker-for-windows/).
 
 ## Dockerfile to build the docker image
-The file for building ML9 docker image is below. This file is also on [Github](https://github.com/arthi-ramachandran/marklogic/blob/master/Dockerfile).
+The file for building ML docker image is below. This file is also on [Github](https://github.com/arthi-ramachandran/marklogic/blob/master/Dockerfile).
 ```
 #download the windows server 2016 image from docker
 FROM microsoft/windowsservercore
@@ -32,15 +32,17 @@ RUN Start-Process -Wait -FilePath setup.exe -ArgumentList '-q', '-D', '-g', '-o'
 EXPOSE 7997 7998 7999 8000 8001 8002 8040 8041 8042
 ```
 
-## Creating ML9 docker image on windows 
-To build the image, you will need to have the .msi file for ML9 in same directory that has the Dockerfile. Here is the link to get the ML9 [ Marklogic 9 early access ] (http://marklogicea.staging.wpengine.com/account/login/?redirect_to=http://marklogicea.staging.wpengine.com/) for windows.
+Please notice that the MarkLogic installer ( .msi ) file on windows should be in the same directory in which the Dockerfile is kept.
+
+## Creating MarkLogic docker image on windows 
+To build the image, you will need to have the .msi file for ML in same directory that has the Dockerfile. Here is the link to get the ML [ Marklogic 8 installer ] (http://developer.marklogic.com/products) for windows.
 
 ```
 cd .to.path.that.has.Dockerfile.
 docker build ml9-windows-nightly .
  where ml9-windows is the name of the docker image that is built
  ```
-## Starting  ML9 docker container on windows
+## Starting  MarkLogic docker container on windows
 ```
 docker run -d -p 8000-8004:8000-8004 --name win-ml9 ml9-windows-nightly POWERSHELL -c "net start MarkLogic;ping -t localhost"
 
